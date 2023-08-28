@@ -1,10 +1,19 @@
+// users.js
 import express from "express";
 
 const router = express.Router();
 
-// all routes in here are starting with /users
+const users = [
+  {
+    firstName: "John",
+    lastName: "Doe",
+    age: 25,
+  },
+];
+
+// Route to get user data
 router.get("/", (req, res) => {
-  res.send("Hello");
+  res.json(users); // Return JSON data
 });
 
 export default router;
